@@ -44,6 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
+        //popover.contentSize = NSSize(width: 600, height: 300)
         eventMonitor?.stop()
     }
 }

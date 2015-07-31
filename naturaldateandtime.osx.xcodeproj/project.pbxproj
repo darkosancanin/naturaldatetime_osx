@@ -14,6 +14,7 @@
 		0CDB091B1B6B95B5001EFA6F /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB091A1B6B95B5001EFA6F /* QuestionView.xib */; };
 		0CDB091D1B6B95E1001EFA6F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB091C1B6B95E1001EFA6F /* QuestionViewController.swift */; };
 		0CDB091F1B6B96CE001EFA6F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */; };
+		0CDB09221B6B9C26001EFA6F /* TSTTextGrowth.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB09211B6B9C26001EFA6F /* TSTTextGrowth.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		0CDB091A1B6B95B5001EFA6F /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		0CDB091C1B6B95E1001EFA6F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		0CDB09201B6B9C26001EFA6F /* TSTTextGrowth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTTextGrowth.h; sourceTree = "<group>"; };
+		0CDB09211B6B9C26001EFA6F /* TSTTextGrowth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTTextGrowth.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 		0CDB08FA1B6B8F9B001EFA6F /* naturaldateandtime.osx */ = {
 			isa = PBXGroup;
 			children = (
+				0CDB09201B6B9C26001EFA6F /* TSTTextGrowth.h */,
+				0CDB09211B6B9C26001EFA6F /* TSTTextGrowth.m */,
 				0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */,
 				0CDB08FD1B6B8F9B001EFA6F /* AppDelegate.swift */,
 				0CDB08FF1B6B8F9B001EFA6F /* Images.xcassets */,
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CDB091F1B6B96CE001EFA6F /* EventMonitor.swift in Sources */,
+				0CDB09221B6B9C26001EFA6F /* TSTTextGrowth.m in Sources */,
 				0CDB091D1B6B95E1001EFA6F /* QuestionViewController.swift in Sources */,
 				0CDB08FE1B6B8F9B001EFA6F /* AppDelegate.swift in Sources */,
 			);

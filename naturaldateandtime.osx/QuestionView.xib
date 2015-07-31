@@ -27,7 +27,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" customClass="TSTTextGrowth">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" customClass="TSTTextGrowth">
                     <rect key="frame" x="20" y="253" width="560" height="27"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="e.g. What is the time in Sydney when it is 8pm Pacific time" drawsBackground="YES" id="ZCt-z3-Tqe">
                         <font key="font" metaFont="system" size="16"/>
@@ -42,6 +42,10 @@
                         <constraint firstAttribute="width" constant="310" id="DJm-Kw-q2k"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Logo" id="Uat-UI-4Ok"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-Ff-9Un">
+                    <rect key="frame" x="515" y="242" width="48" height="48"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ClearQuestionButton" id="fAF-4W-AdE"/>
                 </imageView>
             </subviews>
             <constraints>
@@ -59,6 +63,7 @@
         </customView>
     </objects>
     <resources>
+        <image name="ClearQuestionButton" width="30" height="30"/>
         <image name="Logo" width="620" height="300"/>
     </resources>
 </document>

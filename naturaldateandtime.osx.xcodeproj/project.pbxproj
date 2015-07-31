@@ -11,6 +11,9 @@
 		0CDB09001B6B8F9B001EFA6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB08FF1B6B8F9B001EFA6F /* Images.xcassets */; };
 		0CDB09031B6B8F9B001EFA6F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB09011B6B8F9B001EFA6F /* MainMenu.xib */; };
 		0CDB090F1B6B8F9B001EFA6F /* naturaldateandtime_osxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB090E1B6B8F9B001EFA6F /* naturaldateandtime_osxTests.swift */; };
+		0CDB091B1B6B95B5001EFA6F /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB091A1B6B95B5001EFA6F /* QuestionView.xib */; };
+		0CDB091D1B6B95E1001EFA6F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB091C1B6B95E1001EFA6F /* QuestionViewController.swift */; };
+		0CDB091F1B6B96CE001EFA6F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,9 @@
 		0CDB09081B6B8F9B001EFA6F /* naturaldateandtime.osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = naturaldateandtime.osxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDB090D1B6B8F9B001EFA6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CDB090E1B6B8F9B001EFA6F /* naturaldateandtime_osxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naturaldateandtime_osxTests.swift; sourceTree = "<group>"; };
+		0CDB091A1B6B95B5001EFA6F /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		0CDB091C1B6B95E1001EFA6F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +79,13 @@
 		0CDB08FA1B6B8F9B001EFA6F /* naturaldateandtime.osx */ = {
 			isa = PBXGroup;
 			children = (
+				0CDB091E1B6B96CE001EFA6F /* EventMonitor.swift */,
 				0CDB08FD1B6B8F9B001EFA6F /* AppDelegate.swift */,
 				0CDB08FF1B6B8F9B001EFA6F /* Images.xcassets */,
 				0CDB09011B6B8F9B001EFA6F /* MainMenu.xib */,
 				0CDB08FB1B6B8F9B001EFA6F /* Supporting Files */,
+				0CDB091A1B6B95B5001EFA6F /* QuestionView.xib */,
+				0CDB091C1B6B95E1001EFA6F /* QuestionViewController.swift */,
 			);
 			path = naturaldateandtime.osx;
 			sourceTree = "<group>";
@@ -188,6 +197,7 @@
 			files = (
 				0CDB09001B6B8F9B001EFA6F /* Images.xcassets in Resources */,
 				0CDB09031B6B8F9B001EFA6F /* MainMenu.xib in Resources */,
+				0CDB091B1B6B95B5001EFA6F /* QuestionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDB091F1B6B96CE001EFA6F /* EventMonitor.swift in Sources */,
+				0CDB091D1B6B95E1001EFA6F /* QuestionViewController.swift in Sources */,
 				0CDB08FE1B6B8F9B001EFA6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,7 @@
 				0CDB09141B6B8F9B001EFA6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CDB09151B6B8F9B001EFA6F /* Build configuration list for PBXNativeTarget "naturaldateandtime.osxTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +417,7 @@
 				0CDB09171B6B8F9B001EFA6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,10 +10,16 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.questionTextField.delegate = self
     }
     
+    @IBAction func clearQuestionButtonPressed(sender: AnyObject) {
+        self.questionTextField.stringValue = ""
+        self.resizeQuestionTextField()
+    }
+    
     override func controlTextDidChange(obj: NSNotification) {
-        println("---")
-        println(self.questionTextField.intrinsicContentSize)
-        println((obj.object as! NSTextField).frame.height)
-        self.outerQuestionTextHeightConstraint.constant = self.questionTextField.intrinsicContentSize.height + 20;
+        self.resizeQuestionTextField()
+    }
+    
+    func resizeQuestionTextField(){
+        self.outerQuestionTextHeightConstraint.constant = self.questionTextField.intrinsicContentSize.height + 20
     }
 }

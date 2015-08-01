@@ -6,10 +6,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="QuestionViewController" customModule="naturaldateandtime_osx" customModuleProvider="target">
             <connections>
-                <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="jx4-pp-sgM"/>
-                <outlet property="questionTextField" destination="ahk-jw-iwg" id="xd8-t4-DV2"/>
-                <outlet property="test2" destination="mQc-0d-IfB" id="Vil-t7-Vkc"/>
-                <outlet property="view" destination="c22-O7-iKe" id="JFw-zq-gX6"/>
+                <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="zaZ-Kw-UW0"/>
+                <outlet property="questionTextField" destination="ahk-jw-iwg" id="38U-y2-pV0"/>
+                <outlet property="view" destination="c22-O7-iKe" id="sZc-Lm-t03"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -19,9 +18,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-Sg-zWf" userLabel="Outer Question Text" customClass="TSTTextGrowth">
-                    <rect key="frame" x="20" y="350" width="560" height="40"/>
+                    <rect key="frame" x="20" y="346" width="560" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="fDn-wb-vXL"/>
+                        <constraint firstAttribute="height" constant="44" id="fDn-wb-vXL"/>
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VzP-5e-pKT">
                         <font key="font" metaFont="system" size="16"/>
@@ -30,23 +29,29 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" userLabel="Question Text" customClass="TSTTextGrowth">
-                    <rect key="frame" x="25" y="360" width="515" height="19"/>
+                    <rect key="frame" x="25" y="359" width="510" height="19"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="e.g. What is the time in Sydney when it is 8pm Pacific time" drawsBackground="YES" id="ZCt-z3-Tqe">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-Ff-9Un" userLabel="Clear Question Image">
-                    <rect key="frame" x="545" y="354" width="30" height="30"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ClearQuestionButton" id="fAF-4W-AdE"/>
-                </imageView>
+                <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
+                    <rect key="frame" x="550" y="353" width="30" height="30"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ClearQuestionButton" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="bIs-rF-8nk">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clearQuestionButtonPressed:" target="-2" id="al6-KB-sZn"/>
+                    </connections>
+                </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-AS-MG0">
                     <rect key="frame" x="113" y="410" width="375" height="75"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="Title" id="cvK-HX-3PR"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-0d-IfB" userLabel="Answer Text">
-                    <rect key="frame" x="18" y="218" width="564" height="57"/>
+                    <rect key="frame" x="18" y="214" width="564" height="57"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="y5O-ON-V9J">
                         <font key="font" metaFont="system" size="16"/>
                         <string key="title">It is 1pm on Saturday the 1st of August, 2015 in Sydney, New South Wales, Australia (AEST) when it is 8pm on Friday the 31st of July, 2015 in Pacific Time (PT)</string>
@@ -57,18 +62,18 @@
             </subviews>
             <constraints>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="4Jy-RQ-8sY"/>
-                <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="top" constant="-11" id="6BL-yI-hUl"/>
+                <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="top" constant="-12" id="6BL-yI-hUl"/>
                 <constraint firstItem="xrk-AS-MG0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="15" id="Bjb-gk-lT4"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="xrk-AS-MG0" secondAttribute="bottom" constant="20" id="Dv6-oK-nwb"/>
                 <constraint firstAttribute="trailing" secondItem="mQc-0d-IfB" secondAttribute="trailing" constant="20" id="EIl-PR-HrN"/>
-                <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="oDj-Ff-9Un" secondAttribute="trailing" constant="5" id="FMb-4J-fBZ"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="FWT-V5-UW4"/>
                 <constraint firstAttribute="centerX" secondItem="xrk-AS-MG0" secondAttribute="centerX" id="Kif-7l-BPg"/>
                 <constraint firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" constant="20" id="S58-hg-88h"/>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="75" id="UW2-iX-NeJ"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="ahk-jw-iwg" secondAttribute="leading" constant="-5" id="ZUi-Be-atZ"/>
-                <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="40" id="hha-wt-4sQ"/>
-                <constraint firstItem="jd3-Sg-zWf" firstAttribute="centerY" secondItem="oDj-Ff-9Un" secondAttribute="centerY" constant="-0.5" id="mzt-50-Dnj"/>
+                <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="45" id="hha-wt-4sQ"/>
+                <constraint firstItem="l5P-Vo-LTP" firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" id="ucu-Xe-8BA"/>
+                <constraint firstItem="l5P-Vo-LTP" firstAttribute="centerY" secondItem="jd3-Sg-zWf" secondAttribute="centerY" id="uf3-Mu-Ulm"/>
             </constraints>
             <point key="canvasLocation" x="256" y="390"/>
         </customView>

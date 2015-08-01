@@ -4,6 +4,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet var mainView: NSView!
     @IBOutlet weak var questionTextField: NSTextField!
+    @IBOutlet weak var outerQuestionTextField: NSTextField!
     @IBOutlet weak var outerQuestionTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var questionTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var answerTextField: NSTextField!
@@ -11,13 +12,16 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet var notesTextView: NSTextView!
     @IBOutlet weak var notesTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerNotesView: NSScrollView!
-    
+    @IBOutlet weak var footerTextField: NSTextField!
+    var delegate:PopoverDelegate?
+
     override func viewWillAppear() {
         super.viewWillAppear()
         self.setUpQuestionTextView()
         self.setUpNoteView()
-        self.showPlaceholderExampleQuestion()
         self.hideAll()
+        self.showPlaceholderExampleQuestion()
+        self.updatePopoverHeight()
     }
     
     func setUpQuestionTextView() {
@@ -50,6 +54,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         let size = NSString(string: textToSize as NSString).boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.questionTextField.font!])
         self.outerQuestionTextHeightConstraint.constant = size.height + 20
         self.questionTextHeightConstraint.constant = size.height
+        self.updatePopoverHeight()
     }
     
     func resizeNotesTextView(){
@@ -62,6 +67,25 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         if self.questionTextField.stringValue.isEmpty == false {
             self.askQuestion()
         }
+    }
+    
+    func updatePopoverHeight(){
+        var height: CGFloat = 25
+        println("----")
+        if self.progressIndicator.hidden == false {
+            height += self.progressIndicator.frame.height + 25
+            println("progress")
+        }
+        if self.answerTextField.hidden == false {
+            height += self.answerTextField.frame.height + 25
+            println("answer")
+            println(self.answerTextField.frame.height + 25)
+        }
+        if self.outerNotesView.hidden == false {
+            height += self.notesTextView.frame.height + 25
+            println("notes")
+        }
+        self.delegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 200)
     }
     
     func showPlaceholderExampleQuestion() {
@@ -82,6 +106,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.questionTextField.resignFirstResponder()
         self.progressIndicator.hidden = false
         self.progressIndicator.startAnimation(self)
+        self.updatePopoverHeight()
         var urlRequest = NSMutableURLRequest(URL: NSURL(string: "http://www.naturaldateandtime.com/api/question")!)
         var urlSession = NSURLSession.sharedSession()
         urlRequest.HTTPMethod = "POST"
@@ -136,13 +161,14 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
                 self.resizeNotesTextView()
                 self.outerNotesView.hidden = false
             }
+            self.updatePopoverHeight()
         })
     }
     
     func showError(error: NSError){
         println(error.localizedDescription)
         var friendlyError = "Oops. Something went wrong. Please try again."
-        if error.localizedDescription.lowercaseString.rangeOfString("connection appears to be offline") != nil {
+        if error.code == -1009 {
             friendlyError = "Oops. No connection available. Please check your internet connection."
         }
         self.showAnswer(friendlyError, note:nil)

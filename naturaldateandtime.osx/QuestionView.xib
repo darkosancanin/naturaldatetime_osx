@@ -7,10 +7,12 @@
         <customObject id="-2" userLabel="File's Owner" customClass="QuestionViewController" customModule="naturaldateandtime_osx" customModuleProvider="target">
             <connections>
                 <outlet property="answerTextField" destination="mQc-0d-IfB" id="8n5-BL-gZW"/>
+                <outlet property="footerTextField" destination="yQl-FY-AZs" id="sQY-8y-aXD"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="1T3-S1-M2r"/>
                 <outlet property="notesTextView" destination="q8Y-dq-dnh" id="Hji-UA-UQE"/>
                 <outlet property="notesTextViewHeightConstraint" destination="JAg-iY-rm0" id="x4z-Zb-jxH"/>
                 <outlet property="outerNotesView" destination="AnD-Tx-QyP" id="dtR-wB-vCK"/>
+                <outlet property="outerQuestionTextField" destination="jd3-Sg-zWf" id="5Mu-wU-5Dv"/>
                 <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="zaZ-Kw-UW0"/>
                 <outlet property="progressIndicator" destination="Vgp-AJ-put" id="dUZ-1z-7R2"/>
                 <outlet property="questionTextField" destination="ahk-jw-iwg" id="38U-y2-pV0"/>
@@ -76,7 +78,7 @@
                     <rect key="frame" x="284" y="189" width="32" height="32"/>
                 </progressIndicator>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yQl-FY-AZs">
-                    <rect key="frame" x="185" y="10" width="230" height="18"/>
+                    <rect key="frame" x="185" y="20" width="230" height="18"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="powered by www.naturaldateandtime.com" id="eZW-fx-9vv">
                         <font key="font" size="12" name="Georgia"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,6 +129,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="4Jy-RQ-8sY"/>
+                <constraint firstAttribute="bottom" secondItem="yQl-FY-AZs" secondAttribute="bottom" constant="20" id="5m3-ni-66e"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="top" constant="-12" id="6BL-yI-hUl"/>
                 <constraint firstItem="xrk-AS-MG0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="15" id="Bjb-gk-lT4"/>
                 <constraint firstAttribute="trailing" secondItem="AnD-Tx-QyP" secondAttribute="trailing" constant="20" id="DYa-0p-Ucg"/>
@@ -139,10 +142,8 @@
                 <constraint firstItem="AnD-Tx-QyP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="UhM-ad-cFz"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="ahk-jw-iwg" secondAttribute="leading" constant="-5" id="ZUi-Be-atZ"/>
                 <constraint firstItem="AnD-Tx-QyP" firstAttribute="top" secondItem="mQc-0d-IfB" secondAttribute="bottom" constant="25" id="ZoF-vC-WFe"/>
-                <constraint firstAttribute="bottom" secondItem="yQl-FY-AZs" secondAttribute="bottom" constant="10" id="gU2-Vs-zh2"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="45" id="hha-wt-4sQ"/>
                 <constraint firstAttribute="centerX" secondItem="yQl-FY-AZs" secondAttribute="centerX" id="jaY-MT-eml"/>
-                <constraint firstItem="yQl-FY-AZs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AnD-Tx-QyP" secondAttribute="bottom" constant="25" id="k47-6F-E0i"/>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="slS-MK-T66"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" id="ucu-Xe-8BA"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="centerY" secondItem="jd3-Sg-zWf" secondAttribute="centerY" id="uf3-Mu-Ulm"/>

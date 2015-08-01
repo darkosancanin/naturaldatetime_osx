@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C82B18F1B6CCFA100437FA8 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B18E1B6CCFA100437FA8 /* QuestionViewController.swift */; };
 		0C82B1911B6CD7E300437FA8 /* ExampleQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B1901B6CD7E300437FA8 /* ExampleQuestions.swift */; };
+		0C82B1931B6CF9D100437FA8 /* PopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B1921B6CF9D100437FA8 /* PopoverDelegate.swift */; };
 		0CDB08FE1B6B8F9B001EFA6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB08FD1B6B8F9B001EFA6F /* AppDelegate.swift */; };
 		0CDB09001B6B8F9B001EFA6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB08FF1B6B8F9B001EFA6F /* Images.xcassets */; };
 		0CDB09031B6B8F9B001EFA6F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB09011B6B8F9B001EFA6F /* MainMenu.xib */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		0C82B18E1B6CCFA100437FA8 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0C82B1901B6CD7E300437FA8 /* ExampleQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleQuestions.swift; sourceTree = "<group>"; };
+		0C82B1921B6CF9D100437FA8 /* PopoverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDelegate.swift; sourceTree = "<group>"; };
 		0CDB08F81B6B8F9B001EFA6F /* naturaldateandtime.osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naturaldateandtime.osx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDB08FC1B6B8F9B001EFA6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CDB08FD1B6B8F9B001EFA6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				0CDB08FF1B6B8F9B001EFA6F /* Images.xcassets */,
 				0CDB09011B6B8F9B001EFA6F /* MainMenu.xib */,
 				0CDB08FB1B6B8F9B001EFA6F /* Supporting Files */,
+				0C82B1921B6CF9D100437FA8 /* PopoverDelegate.swift */,
 			);
 			path = naturaldateandtime.osx;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				0C82B1911B6CD7E300437FA8 /* ExampleQuestions.swift in Sources */,
 				0C82B18F1B6CCFA100437FA8 /* QuestionViewController.swift in Sources */,
 				0CDB08FE1B6B8F9B001EFA6F /* AppDelegate.swift in Sources */,
+				0C82B1931B6CF9D100437FA8 /* PopoverDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

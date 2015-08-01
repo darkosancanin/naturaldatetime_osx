@@ -1,7 +1,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, PopoverDelegate {
 
     @IBOutlet weak var window: NSWindow!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
@@ -14,7 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = Selector("togglePopover:")
         }
         
-        popover.contentViewController = QuestionViewController(nibName: "QuestionView", bundle: nil)
+        let questionViewController = QuestionViewController(nibName: "QuestionView", bundle: nil)
+        questionViewController?.delegate = self
+        popover.contentViewController = questionViewController
         
         eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
             if self.popover.shown {
@@ -45,6 +47,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
+    }
+    
+    func resizeToHeight(height: CGFloat){
+        popover.contentSize.height = height
     }
 }
 

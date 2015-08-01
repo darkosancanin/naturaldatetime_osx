@@ -18,8 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-0d-IfB">
-                    <rect key="frame" x="18" y="79" width="564" height="44"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-0d-IfB">
+                    <rect key="frame" x="18" y="119" width="564" height="57"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="y5O-ON-V9J">
                         <font key="font" metaFont="system" size="16"/>
                         <string key="title">It is 1pm on Saturday the 1st of August, 2015 in Sydney, New South Wales, Australia (AEST) when it is 8pm on Friday the 31st of July, 2015 in Pacific Time (PT)</string>
@@ -27,43 +27,39 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" customClass="TSTTextGrowth">
-                    <rect key="frame" x="20" y="253" width="560" height="27"/>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-Ff-9Un">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ClearQuestionButton" id="fAF-4W-AdE"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V58-9I-iuj">
+                    <rect key="frame" x="50" y="380" width="500" height="100"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Title" id="bTc-7r-v4f"/>
+                </imageView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" customClass="TSTTextGrowth">
+                    <rect key="frame" x="20" y="280" width="560" height="24"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="e.g. What is the time in Sydney when it is 8pm Pacific time" drawsBackground="YES" id="ZCt-z3-Tqe">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crS-QK-tC9">
-                    <rect key="frame" x="145" y="330" width="310" height="150"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="150" id="Au6-wT-JTh"/>
-                        <constraint firstAttribute="width" constant="310" id="DJm-Kw-q2k"/>
-                    </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Logo" id="Uat-UI-4Ok"/>
-                </imageView>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-Ff-9Un">
-                    <rect key="frame" x="515" y="242" width="48" height="48"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ClearQuestionButton" id="fAF-4W-AdE"/>
-                </imageView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="crS-QK-tC9" secondAttribute="trailing" constant="145" id="EKw-ro-C68"/>
-                <constraint firstAttribute="trailing" secondItem="mQc-0d-IfB" secondAttribute="trailing" constant="20" id="Ukk-m8-dW9"/>
-                <constraint firstItem="ahk-jw-iwg" firstAttribute="top" secondItem="crS-QK-tC9" secondAttribute="bottom" constant="50" id="a4e-zW-sqi"/>
-                <constraint firstItem="crS-QK-tC9" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="145" id="bum-fJ-pbL"/>
-                <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="cdY-GC-26H"/>
-                <constraint firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="20" id="hy8-mg-qqg"/>
-                <constraint firstItem="ahk-jw-iwg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="lCK-fE-cRe"/>
-                <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="bottom" constant="80" id="li1-9W-gmQ"/>
-                <constraint firstItem="crS-QK-tC9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="qPH-PR-k90"/>
+                <constraint firstItem="V58-9I-iuj" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="LwE-tF-y4d"/>
+                <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="bottom" constant="104" id="dI0-o9-mXi"/>
+                <constraint firstItem="V58-9I-iuj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="50" id="hrn-EW-95Y"/>
+                <constraint firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="20" id="qYh-Uu-Aq4"/>
+                <constraint firstAttribute="trailing" secondItem="V58-9I-iuj" secondAttribute="trailing" constant="50" id="sys-ai-dTF"/>
+                <constraint firstAttribute="trailing" secondItem="mQc-0d-IfB" secondAttribute="trailing" constant="20" id="wbG-hQ-4fh"/>
+                <constraint firstItem="ahk-jw-iwg" firstAttribute="top" secondItem="V58-9I-iuj" secondAttribute="bottom" constant="76" id="xBI-kd-x95"/>
+                <constraint firstItem="ahk-jw-iwg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="zcO-BO-mY2"/>
+                <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="zqB-D9-kNi"/>
             </constraints>
             <point key="canvasLocation" x="256" y="390"/>
         </customView>
     </objects>
     <resources>
         <image name="ClearQuestionButton" width="30" height="30"/>
-        <image name="Logo" width="620" height="300"/>
+        <image name="Title" width="500" height="100"/>
     </resources>
 </document>

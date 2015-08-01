@@ -10,7 +10,6 @@
                 <outlet property="mainView" destination="c22-O7-iKe" id="1T3-S1-M2r"/>
                 <outlet property="notesTextView" destination="q8Y-dq-dnh" id="Hji-UA-UQE"/>
                 <outlet property="notesTextViewHeightConstraint" destination="JAg-iY-rm0" id="x4z-Zb-jxH"/>
-                <outlet property="notesTextViewHeightConstrint" destination="JAg-iY-rm0" id="h3T-Q2-5eY"/>
                 <outlet property="outerNotesView" destination="AnD-Tx-QyP" id="dtR-wB-vCK"/>
                 <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="zaZ-Kw-UW0"/>
                 <outlet property="progressIndicator" destination="Vgp-AJ-put" id="dUZ-1z-7R2"/>

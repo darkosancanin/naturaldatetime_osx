@@ -14,11 +14,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-Sg-zWf" userLabel="Outer Question Text" customClass="TSTTextGrowth">
-                    <rect key="frame" x="20" y="346" width="560" height="44"/>
+                    <rect key="frame" x="20" y="246" width="560" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="fDn-wb-vXL"/>
                     </constraints>
@@ -29,7 +29,7 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" userLabel="Question Text" customClass="TSTTextGrowth">
-                    <rect key="frame" x="25" y="359" width="510" height="19"/>
+                    <rect key="frame" x="25" y="259" width="510" height="19"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="e.g. What is the time in Sydney when it is 8pm Pacific time" drawsBackground="YES" id="ZCt-z3-Tqe">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,7 +37,7 @@
                     </textFieldCell>
                 </textField>
                 <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
-                    <rect key="frame" x="550" y="353" width="30" height="30"/>
+                    <rect key="frame" x="550" y="253" width="30" height="30"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ClearQuestionButton" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="bIs-rF-8nk">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -47,15 +47,26 @@
                     </connections>
                 </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-AS-MG0">
-                    <rect key="frame" x="113" y="410" width="375" height="75"/>
+                    <rect key="frame" x="113" y="310" width="375" height="75"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="Title" id="cvK-HX-3PR"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-0d-IfB" userLabel="Answer Text">
-                    <rect key="frame" x="18" y="214" width="564" height="57"/>
+                    <rect key="frame" x="18" y="164" width="564" height="57"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="y5O-ON-V9J">
                         <font key="font" metaFont="system" size="16"/>
                         <string key="title">It is 1pm on Saturday the 1st of August, 2015 in Sydney, New South Wales, Australia (AEST) when it is 8pm on Friday the 31st of July, 2015 in Pacific Time (PT)</string>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-AJ-put">
+                    <rect key="frame" x="284" y="189" width="32" height="32"/>
+                </progressIndicator>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yQl-FY-AZs">
+                    <rect key="frame" x="176" y="10" width="248" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="powered by www.naturaldateandtime.com" id="eZW-fx-9vv">
+                        <font key="font" size="12" name="Georgia"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -67,13 +78,17 @@
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="xrk-AS-MG0" secondAttribute="bottom" constant="20" id="Dv6-oK-nwb"/>
                 <constraint firstAttribute="trailing" secondItem="mQc-0d-IfB" secondAttribute="trailing" constant="20" id="EIl-PR-HrN"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="FWT-V5-UW4"/>
+                <constraint firstItem="Vgp-AJ-put" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="JCP-Av-wvf"/>
                 <constraint firstAttribute="centerX" secondItem="xrk-AS-MG0" secondAttribute="centerX" id="Kif-7l-BPg"/>
                 <constraint firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" constant="20" id="S58-hg-88h"/>
-                <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="75" id="UW2-iX-NeJ"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="ahk-jw-iwg" secondAttribute="leading" constant="-5" id="ZUi-Be-atZ"/>
+                <constraint firstAttribute="bottom" secondItem="yQl-FY-AZs" secondAttribute="bottom" constant="10" id="gU2-Vs-zh2"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="45" id="hha-wt-4sQ"/>
+                <constraint firstAttribute="centerX" secondItem="yQl-FY-AZs" secondAttribute="centerX" id="jaY-MT-eml"/>
+                <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="slS-MK-T66"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" id="ucu-Xe-8BA"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="centerY" secondItem="jd3-Sg-zWf" secondAttribute="centerY" id="uf3-Mu-Ulm"/>
+                <constraint firstAttribute="centerX" secondItem="Vgp-AJ-put" secondAttribute="centerX" id="zQs-gQ-kCD"/>
             </constraints>
             <point key="canvasLocation" x="256" y="390"/>
         </customView>

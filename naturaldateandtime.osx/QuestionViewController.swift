@@ -4,6 +4,9 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet weak var questionTextField: NSTextField!
     @IBOutlet weak var outerQuestionTextHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var answerTextField: NSTextField!
+    @IBOutlet weak var notesTextField: NSTextField!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     override func viewWillAppear() {
         super.viewWillAppear()

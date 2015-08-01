@@ -58,7 +58,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func resizeNotesTextView(){
-        let constraint = CGSize(width: self.notesTextView.frame.width, height: CGFloat.max)
+        let constraint = CGSize(width: self.outerNotesView.frame.width, height: CGFloat.max)
         let size = NSString(string: self.notesTextView.string! as NSString).boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.questionTextField.font!])
         self.notesTextViewHeightConstraint.constant = size.height
     }
@@ -71,19 +71,16 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     func updatePopoverHeight(){
         var height: CGFloat = 25
-        println("----")
         if self.progressIndicator.hidden == false {
             height += self.progressIndicator.frame.height + 25
-            println("progress")
         }
         if self.answerTextField.hidden == false {
-            height += self.answerTextField.frame.height + 25
-            println("answer")
-            println(self.answerTextField.frame.height + 25)
+            let constraint = CGSize(width: self.answerTextField.frame.width, height: CGFloat.max)
+            let answerHeight = NSString(string: self.answerTextField.stringValue as NSString).boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.answerTextField.font!]).height
+            height += answerHeight + 25
         }
         if self.outerNotesView.hidden == false {
-            height += self.notesTextView.frame.height + 25
-            println("notes")
+            height += self.outerNotesView.frame.height + 25
         }
         self.delegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 200)
     }

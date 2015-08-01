@@ -7,13 +7,24 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var outerQuestionTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var questionTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var answerTextField: NSTextField!
-    @IBOutlet weak var notesTextField: NSTextField!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet var notesTextView: NSTextView!
+    @IBOutlet weak var notesTextViewHeightConstraint: NSLayoutConstraint!
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        self.questionTextField.delegate = self
+        self.setUpQuestionTextView()
+        self.setUpNoteView()
         self.showPlaceholderExampleQuestion()
+        self.hideAll()
+    }
+    
+    func setUpQuestionTextView() {
+        self.questionTextField.delegate = self
+    }
+    
+    func setUpNoteView() {
+        self.notesTextView.textContainerInset = NSSize(width: 8,height: 8)
     }
     
     @IBAction func clearQuestionButtonPressed(sender: AnyObject) {
@@ -55,6 +66,6 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.answerTextField.hidden = true
         self.progressIndicator.hidden = true
         self.progressIndicator.stopAnimation(self)
-        self.notesTextField.hidden = true
+        //self.notesTextView.hidden = true
     }
 }

@@ -8,7 +8,9 @@
             <connections>
                 <outlet property="answerTextField" destination="mQc-0d-IfB" id="8n5-BL-gZW"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="1T3-S1-M2r"/>
-                <outlet property="notesTextField" destination="Oul-1y-n28" id="JXL-fr-7cd"/>
+                <outlet property="notesTextView" destination="q8Y-dq-dnh" id="Hji-UA-UQE"/>
+                <outlet property="notesTextViewHeightConstraint" destination="JAg-iY-rm0" id="x4z-Zb-jxH"/>
+                <outlet property="notesTextViewHeightConstrint" destination="JAg-iY-rm0" id="h3T-Q2-5eY"/>
                 <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="zaZ-Kw-UW0"/>
                 <outlet property="progressIndicator" destination="Vgp-AJ-put" id="dUZ-1z-7R2"/>
                 <outlet property="questionTextField" destination="ahk-jw-iwg" id="38U-y2-pV0"/>
@@ -22,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-Sg-zWf" userLabel="Outer Question Text" customClass="TSTTextGrowth">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-Sg-zWf" userLabel="Outer Question Text">
                     <rect key="frame" x="20" y="246" width="560" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="fDn-wb-vXL"/>
@@ -81,33 +83,66 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oul-1y-n28">
-                    <rect key="frame" x="20" y="122" width="560" height="17"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="In Sydney, New South Wales, Australia the time 2:30am..." drawsBackground="YES" id="d70-qa-GEb">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.92549019607843142" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                    </textFieldCell>
-                </textField>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-Tx-QyP">
+                    <rect key="frame" x="20" y="103" width="560" height="36"/>
+                    <clipView key="contentView" id="XaA-AN-6NT">
+                        <rect key="frame" x="1" y="1" width="238" height="133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="q8Y-dq-dnh">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.92549019607843142" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="minSize" width="558" height="34"/>
+                                <size key="maxSize" width="558" height="10000000"/>
+                                <attributedString key="textStorage">
+                                    <fragment content="In Sydney, New South Wales, Australia the time 2:30am...">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="558" height="34"/>
+                                <size key="maxSize" width="558" height="10000000"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="JAg-iY-rm0"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="lq3-bd-IVf">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="dKJ-WP-9NM">
+                        <rect key="frame" x="223" y="1" width="16" height="133"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
             <constraints>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="4Jy-RQ-8sY"/>
-                <constraint firstItem="Oul-1y-n28" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="63L-Yh-1FV"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="ahk-jw-iwg" secondAttribute="top" constant="-12" id="6BL-yI-hUl"/>
                 <constraint firstItem="xrk-AS-MG0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="15" id="Bjb-gk-lT4"/>
+                <constraint firstAttribute="trailing" secondItem="AnD-Tx-QyP" secondAttribute="trailing" constant="20" id="DYa-0p-Ucg"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="top" secondItem="xrk-AS-MG0" secondAttribute="bottom" constant="20" id="Dv6-oK-nwb"/>
                 <constraint firstAttribute="trailing" secondItem="mQc-0d-IfB" secondAttribute="trailing" constant="20" id="EIl-PR-HrN"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="FWT-V5-UW4"/>
                 <constraint firstItem="Vgp-AJ-put" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="JCP-Av-wvf"/>
                 <constraint firstAttribute="centerX" secondItem="xrk-AS-MG0" secondAttribute="centerX" id="Kif-7l-BPg"/>
                 <constraint firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" constant="20" id="S58-hg-88h"/>
+                <constraint firstItem="AnD-Tx-QyP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="UhM-ad-cFz"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="ahk-jw-iwg" secondAttribute="leading" constant="-5" id="ZUi-Be-atZ"/>
-                <constraint firstAttribute="trailing" secondItem="Oul-1y-n28" secondAttribute="trailing" constant="20" id="a4H-Se-Ucc"/>
+                <constraint firstItem="AnD-Tx-QyP" firstAttribute="top" secondItem="mQc-0d-IfB" secondAttribute="bottom" constant="25" id="ZoF-vC-WFe"/>
                 <constraint firstAttribute="bottom" secondItem="yQl-FY-AZs" secondAttribute="bottom" constant="10" id="gU2-Vs-zh2"/>
-                <constraint firstItem="yQl-FY-AZs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oul-1y-n28" secondAttribute="bottom" constant="25" id="gwM-yz-rXA"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="trailing" secondItem="ahk-jw-iwg" secondAttribute="trailing" constant="45" id="hha-wt-4sQ"/>
-                <constraint firstItem="Oul-1y-n28" firstAttribute="top" secondItem="mQc-0d-IfB" secondAttribute="bottom" constant="25" id="hsP-ak-FG8"/>
                 <constraint firstAttribute="centerX" secondItem="yQl-FY-AZs" secondAttribute="centerX" id="jaY-MT-eml"/>
+                <constraint firstItem="yQl-FY-AZs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AnD-Tx-QyP" secondAttribute="bottom" constant="25" id="k47-6F-E0i"/>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="slS-MK-T66"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" id="ucu-Xe-8BA"/>
                 <constraint firstItem="l5P-Vo-LTP" firstAttribute="centerY" secondItem="jd3-Sg-zWf" secondAttribute="centerY" id="uf3-Mu-Ulm"/>

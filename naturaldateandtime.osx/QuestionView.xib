@@ -6,8 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="QuestionViewController" customModule="naturaldateandtime_osx" customModuleProvider="target">
             <connections>
-                <outlet property="mainView" destination="c22-O7-iKe" id="2Vj-aZ-jVz"/>
-                <outlet property="test" destination="c22-O7-iKe" id="jGr-BS-fJf"/>
+                <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="jx4-pp-sgM"/>
+                <outlet property="questionTextField" destination="ahk-jw-iwg" id="xd8-t4-DV2"/>
                 <outlet property="test2" destination="mQc-0d-IfB" id="Vil-t7-Vkc"/>
                 <outlet property="view" destination="c22-O7-iKe" id="JFw-zq-gX6"/>
             </connections>

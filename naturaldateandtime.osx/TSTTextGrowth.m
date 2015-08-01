@@ -47,8 +47,8 @@
 
 - (void)textDidChange:(NSNotification *)notification
 {
-	[super textDidChange:notification];
 	[self invalidateIntrinsicContentSize];
+    [super textDidChange:notification];
 }
 
 -(NSSize)intrinsicContentSize
@@ -76,7 +76,6 @@
 		_lastIntrinsicSize = intrinsicSize;
 		_hasLastIntrinsicSize = YES;
 	}
-	
     return intrinsicSize;
 }
 

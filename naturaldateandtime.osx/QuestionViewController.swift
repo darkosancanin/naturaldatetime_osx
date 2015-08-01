@@ -1,20 +1,19 @@
 import Cocoa
 
-class QuestionViewController: NSViewController {
+class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
-    @IBOutlet var mainView: NSView!
+    @IBOutlet weak var questionTextField: NSTextField!
+    @IBOutlet weak var outerQuestionTextHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var test2: NSTextField!
-    @IBOutlet var test: NSView!
     override func viewWillAppear() {
         super.viewWillAppear()
-        //mainView.wantsLayer = true
-        //mainView.layer!.backgroundColor = NSColor(deviceRed: 244, green: 244, blue: 244, alpha: 1.0).CGColor
-        
-        //test.wantsLayer = true
-        //test.layer!.backgroundColor = NSColor(deviceRed: 244, green: 244, blue: 244, alpha: 1.0).CGColor
-        
-        //test2.wantsLayer = true
-        //test2.layer!.backgroundColor = NSColor(deviceRed: 244, green: 244, blue: 244, alpha: 1.0).CGColor
+        self.questionTextField.delegate = self
+    }
+    
+    override func controlTextDidChange(obj: NSNotification) {
+        println("---")
+        println(self.questionTextField.intrinsicContentSize)
+        println((obj.object as! NSTextField).frame.height)
+        self.outerQuestionTextHeightConstraint.constant = self.questionTextField.intrinsicContentSize.height + 20;
     }
 }

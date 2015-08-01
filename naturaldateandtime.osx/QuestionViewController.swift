@@ -10,6 +10,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet var notesTextView: NSTextView!
     @IBOutlet weak var notesTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var outerNotesView: NSScrollView!
     
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -49,11 +50,18 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         let size = NSString(string: textToSize as NSString).boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.questionTextField.font!])
         self.outerQuestionTextHeightConstraint.constant = size.height + 20
         self.questionTextHeightConstraint.constant = size.height
-        //self.outerQuestionTextHeightConstraint.constant = self.questionTextField.intrinsicContentSize.height + 20
+    }
+    
+    func resizeNotesTextView(){
+        let constraint = CGSize(width: self.notesTextView.frame.width, height: CGFloat.max)
+        let size = NSString(string: self.notesTextView.string! as NSString).boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.questionTextField.font!])
+        self.notesTextViewHeightConstraint.constant = size.height
     }
     
     @IBAction func questionTextFieldEnterPressed(sender: AnyObject) {
-        
+        if self.questionTextField.stringValue.isEmpty == false {
+            self.askQuestion()
+        }
     }
     
     func showPlaceholderExampleQuestion() {
@@ -66,6 +74,77 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.answerTextField.hidden = true
         self.progressIndicator.hidden = true
         self.progressIndicator.stopAnimation(self)
-        //self.notesTextView.hidden = true
+        self.outerNotesView.hidden = true
+    }
+    
+    func askQuestion() {
+        self.hideAll()
+        self.questionTextField.resignFirstResponder()
+        self.progressIndicator.hidden = false
+        self.progressIndicator.startAnimation(self)
+        var urlRequest = NSMutableURLRequest(URL: NSURL(string: "http://www.naturaldateandtime.com/api/question")!)
+        var urlSession = NSURLSession.sharedSession()
+        urlRequest.HTTPMethod = "POST"
+        urlRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        var postParameters = "client=osx&client_version=1.0&question=" + self.questionTextField.stringValue.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        urlRequest.HTTPBody = postParameters.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var dataTask = urlSession.dataTaskWithRequest(urlRequest, completionHandler: {data, response, error -> Void in
+            dispatch_async(dispatch_get_main_queue(),{
+                self.hideAll()
+            })
+            if let unwrappedError = error {
+                self.showError(unwrappedError)
+                return
+            }
+            var jsonError: NSError?
+            var jsonObject = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &jsonError) as? NSDictionary
+            
+            if let unwrappedError = jsonError {
+                self.showError(unwrappedError)
+                return
+            }
+            
+            if let parsedJSON = jsonObject {
+                let answerText = parsedJSON["AnswerText"] as? String
+                let note = parsedJSON["Note"] as? String
+                let understoodQuestion = parsedJSON["UnderstoodQuestion"] as! Bool
+                if understoodQuestion {
+                    self.showAnswer(answerText, note:note)
+                } else {
+                    self.showAnswer("Im sorry I could not understand your question. Please try and rephrase your question or tap on the examples link above to see what questions I do understand.", note: nil)
+                }
+            }
+            else {
+                self.showAnswer("Oops. Something went wrong. Please try again.", note:nil)
+            }
+        })
+        
+        dataTask.resume()
+    }
+    
+    func showAnswer(answer: String?, note: String?){
+        dispatch_async(dispatch_get_main_queue(),{
+            if let answerText = answer {
+                self.answerTextField.stringValue = answerText
+                self.answerTextField.hidden = false
+            }
+            
+            if let noteText = note {
+                self.notesTextView.string = noteText
+                self.resizeNotesTextView()
+                self.outerNotesView.hidden = false
+            }
+        })
+    }
+    
+    func showError(error: NSError){
+        println(error.localizedDescription)
+        var friendlyError = "Oops. Something went wrong. Please try again."
+        if error.localizedDescription.lowercaseString.rangeOfString("connection appears to be offline") != nil {
+            friendlyError = "Oops. No connection available. Please check your internet connection."
+        }
+        self.showAnswer(friendlyError, note:nil)
     }
 }

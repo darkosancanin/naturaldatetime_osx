@@ -7,10 +7,12 @@
         <customObject id="-2" userLabel="File's Owner" customClass="QuestionViewController" customModule="naturaldateandtime_osx" customModuleProvider="target">
             <connections>
                 <outlet property="answerTextField" destination="mQc-0d-IfB" id="8n5-BL-gZW"/>
+                <outlet property="mainView" destination="c22-O7-iKe" id="1T3-S1-M2r"/>
                 <outlet property="notesTextField" destination="Oul-1y-n28" id="JXL-fr-7cd"/>
                 <outlet property="outerQuestionTextHeightConstraint" destination="fDn-wb-vXL" id="zaZ-Kw-UW0"/>
                 <outlet property="progressIndicator" destination="Vgp-AJ-put" id="dUZ-1z-7R2"/>
                 <outlet property="questionTextField" destination="ahk-jw-iwg" id="38U-y2-pV0"/>
+                <outlet property="questionTextHeightConstraint" destination="vKH-yw-MQb" id="I5G-XV-zR9"/>
                 <outlet property="view" destination="c22-O7-iKe" id="sZc-Lm-t03"/>
             </connections>
         </customObject>
@@ -31,13 +33,19 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" userLabel="Question Text" customClass="TSTTextGrowth">
-                    <rect key="frame" x="25" y="259" width="510" height="19"/>
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" userLabel="Question Text">
+                    <rect key="frame" x="25" y="254" width="510" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="vKH-yw-MQb"/>
+                    </constraints>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="e.g. What is the time in Sydney when it is 8pm Pacific time" drawsBackground="YES" id="ZCt-z3-Tqe">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="questionTextFieldEnterPressed:" target="-2" id="yWS-eb-s5z"/>
+                    </connections>
                 </textField>
                 <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
                     <rect key="frame" x="550" y="253" width="30" height="30"/>

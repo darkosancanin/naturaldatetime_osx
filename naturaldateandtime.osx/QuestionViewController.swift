@@ -69,6 +69,12 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
+    override func doCommandBySelector(aSelector: Selector) {
+        if aSelector == "cancelOperation:" {
+            self.delegate?.closePopover(self)
+        }
+    }
+    
     func updatePopoverHeight(){
         var height: CGFloat = 25
         if self.progressIndicator.hidden == false {

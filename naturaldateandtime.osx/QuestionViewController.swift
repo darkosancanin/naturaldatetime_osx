@@ -82,7 +82,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         if self.outerNotesView.hidden == false {
             height += self.outerNotesView.frame.height + 25
         }
-        self.delegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 200)
+        self.delegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 180)
     }
     
     func showPlaceholderExampleQuestion() {

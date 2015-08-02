@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-Sg-zWf" userLabel="Outer Question Text">
-                    <rect key="frame" x="20" y="246" width="560" height="44"/>
+                    <rect key="frame" x="20" y="261" width="560" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="fDn-wb-vXL"/>
                     </constraints>
@@ -38,7 +38,7 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-jw-iwg" userLabel="Question Text">
-                    <rect key="frame" x="25" y="254" width="510" height="24"/>
+                    <rect key="frame" x="25" y="269" width="510" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="vKH-yw-MQb"/>
                     </constraints>
@@ -52,7 +52,7 @@
                     </connections>
                 </textField>
                 <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
-                    <rect key="frame" x="550" y="253" width="30" height="30"/>
+                    <rect key="frame" x="550" y="268" width="30" height="30"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ClearQuestionButton" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="bIs-rF-8nk">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -62,11 +62,11 @@
                     </connections>
                 </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-AS-MG0">
-                    <rect key="frame" x="113" y="310" width="375" height="75"/>
+                    <rect key="frame" x="150" y="325" width="300" height="60"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="Title" id="cvK-HX-3PR"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-0d-IfB" userLabel="Answer Text">
-                    <rect key="frame" x="18" y="164" width="564" height="57"/>
+                    <rect key="frame" x="18" y="179" width="564" height="57"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="y5O-ON-V9J">
                         <font key="font" metaFont="system" size="16"/>
                         <string key="title">It is 1pm on Saturday the 1st of August, 2015 in Sydney, New South Wales, Australia (AEST) when it is 8pm on Friday the 31st of July, 2015 in Pacific Time (PT)</string>
@@ -75,7 +75,7 @@
                     </textFieldCell>
                 </textField>
                 <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-AJ-put">
-                    <rect key="frame" x="284" y="189" width="32" height="32"/>
+                    <rect key="frame" x="284" y="204" width="32" height="32"/>
                 </progressIndicator>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yQl-FY-AZs">
                     <rect key="frame" x="185" y="20" width="230" height="18"/>
@@ -86,7 +86,7 @@
                     </textFieldCell>
                 </textField>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-Tx-QyP">
-                    <rect key="frame" x="20" y="103" width="560" height="36"/>
+                    <rect key="frame" x="20" y="118" width="560" height="36"/>
                     <clipView key="contentView" id="XaA-AN-6NT">
                         <rect key="frame" x="1" y="1" width="238" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,6 @@
     </objects>
     <resources>
         <image name="ClearQuestionButton" width="30" height="30"/>
-        <image name="Title" width="375" height="75"/>
+        <image name="Title" width="300" height="60"/>
     </resources>
 </document>

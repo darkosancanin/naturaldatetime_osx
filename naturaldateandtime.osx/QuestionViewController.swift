@@ -14,11 +14,15 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var outerNotesView: NSScrollView!
     @IBOutlet weak var footerTextField: NSTextField!
     var delegate:PopoverDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setUpQuestionTextView()
+        self.setUpNoteView()
+    }
 
     override func viewWillAppear() {
         super.viewWillAppear()
-        self.setUpQuestionTextView()
-        self.setUpNoteView()
         self.hideAll()
         self.showPlaceholderExampleQuestion()
         self.updatePopoverHeight()

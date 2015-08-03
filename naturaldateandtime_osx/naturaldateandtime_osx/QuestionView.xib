@@ -126,6 +126,20 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="NO0-S1-bmp">
+                    <rect key="frame" x="542" y="20" width="38" height="19"/>
+                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="bFs-CO-HKO">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="drf-i4-Xcr">
+                            <items>
+                                <menuItem image="NSActionTemplate" hidden="YES" id="q01-cg-tRZ"/>
+                                <menuItem title="About" id="UOF-wM-7Vr"/>
+                                <menuItem title="Quit" id="K5G-ug-6Kd"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
             <constraints>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="4Jy-RQ-8sY"/>
@@ -138,6 +152,8 @@
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="FWT-V5-UW4"/>
                 <constraint firstItem="Vgp-AJ-put" firstAttribute="top" secondItem="jd3-Sg-zWf" secondAttribute="bottom" constant="25" id="JCP-Av-wvf"/>
                 <constraint firstAttribute="centerX" secondItem="xrk-AS-MG0" secondAttribute="centerX" id="Kif-7l-BPg"/>
+                <constraint firstAttribute="trailing" secondItem="NO0-S1-bmp" secondAttribute="trailing" constant="20" id="L9v-Uq-sDl"/>
+                <constraint firstAttribute="bottom" secondItem="NO0-S1-bmp" secondAttribute="bottom" constant="20" id="QGH-N3-UdU"/>
                 <constraint firstAttribute="trailing" secondItem="jd3-Sg-zWf" secondAttribute="trailing" constant="20" id="S58-hg-88h"/>
                 <constraint firstItem="AnD-Tx-QyP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="UhM-ad-cFz"/>
                 <constraint firstItem="jd3-Sg-zWf" firstAttribute="leading" secondItem="ahk-jw-iwg" secondAttribute="leading" constant="-5" id="ZUi-Be-atZ"/>
@@ -154,6 +170,7 @@
     </objects>
     <resources>
         <image name="ClearQuestionButton" width="30" height="30"/>
+        <image name="NSActionTemplate" width="14" height="14"/>
         <image name="Title" width="300" height="60"/>
     </resources>
 </document>

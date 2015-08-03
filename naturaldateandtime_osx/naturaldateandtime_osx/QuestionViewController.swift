@@ -13,6 +13,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var notesTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerNotesView: NSScrollView!
     @IBOutlet weak var footerTextField: NSTextField!
+    @IBOutlet weak var launchAtLoginMenuItem: NSMenuItem!
     var delegate:PopoverDelegate?
     
     override func viewDidLoad() {

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="answerTextField" destination="mQc-0d-IfB" id="8n5-BL-gZW"/>
                 <outlet property="footerTextField" destination="yQl-FY-AZs" id="sQY-8y-aXD"/>
+                <outlet property="launchAtLoginMenuItem" destination="mpi-yI-TYp" id="u2K-Hb-o65"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="1T3-S1-M2r"/>
                 <outlet property="notesTextView" destination="q8Y-dq-dnh" id="Hji-UA-UQE"/>
                 <outlet property="notesTextViewHeightConstraint" destination="JAg-iY-rm0" id="x4z-Zb-jxH"/>
@@ -128,18 +129,22 @@
                 </scrollView>
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="NO0-S1-bmp">
                     <rect key="frame" x="542" y="20" width="38" height="19"/>
-                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="UOF-wM-7Vr" id="bFs-CO-HKO">
+                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="bFs-CO-HKO">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="drf-i4-Xcr">
                             <items>
                                 <menuItem image="NSActionTemplate" hidden="YES" id="q01-cg-tRZ"/>
-                                <menuItem title="About" id="UOF-wM-7Vr">
+                                <menuItem title="About Natural Date and TIme" id="UOF-wM-7Vr">
                                     <connections>
                                         <action selector="aboutMenuItemPressed:" target="-2" id="07i-pI-pJC"/>
                                     </connections>
                                 </menuItem>
                                 <menuItem isSeparatorItem="YES" id="C1G-mf-12E"/>
+                                <menuItem title="Launch at Login" id="mpi-yI-TYp">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="kJC-ZP-yas"/>
                                 <menuItem title="Quit Natural Date and Time" keyEquivalent="q" id="K5G-ug-6Kd">
                                     <connections>
                                         <action selector="quitMenuItemPressed:" target="-2" id="Ueh-q0-Rxe"/>

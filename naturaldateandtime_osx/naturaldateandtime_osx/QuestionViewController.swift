@@ -3,6 +3,8 @@ import ServiceManagement
 
 class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
+    var delegate:PopoverDelegate?
+    var applicationWasLaunchedAtLogin = false
     @IBOutlet var mainView: NSView!
     @IBOutlet weak var questionTextField: NSTextField!
     @IBOutlet weak var outerQuestionTextField: NSTextField!
@@ -15,7 +17,6 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var outerNotesView: NSScrollView!
     @IBOutlet weak var footerTextField: NSTextField!
     @IBOutlet weak var launchAtLoginMenuItem: NSMenuItem!
-    var delegate:PopoverDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,9 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func setUpLaunchAtLoginMenuItem(){
-        
+        if self.applicationWasLaunchedAtLogin == true {
+            self.launchAtLoginMenuItem.state = NSOnState
+        }
     }
     
     @IBAction func launchAtLoginPressed(sender: AnyObject) {

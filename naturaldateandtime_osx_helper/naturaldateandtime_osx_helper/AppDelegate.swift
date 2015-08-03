@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  naturaldateandtime_osx_helper
-//
-//  Created by Darko Sancanin on 3/08/2015.
-//  Copyright (c) 2015 darkosancanin.com. All rights reserved.
-//
-
 import Cocoa
 
 @NSApplicationMain
@@ -15,13 +7,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        var mainAppIsAlreadyRunning = false
+        let runningApplications = NSWorkspace.sharedWorkspace().runningApplications as! [NSRunningApplication]
+        for app : NSRunningApplication in runningApplications {
+            if app.bundleIdentifier == "com.darkosancanin.naturaldateandtime-osx" {
+                mainAppIsAlreadyRunning = true
+            }
+        }
+        
+        if(mainAppIsAlreadyRunning){
+            self.killApp()
+        }
+        else{
+            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: Selector("killApp:"), name: "naturaldateandtime.terminate.helper", object: "com.darkosancanin.naturaldateandtime-osx")
+            
+            var pathToBundle = NSBundle.mainBundle().bundlePath.pathComponents
+            pathToBundle.removeLast()
+            pathToBundle.removeLast()
+            pathToBundle.removeLast()
+            pathToBundle.append("MacOS")
+            pathToBundle.append("naturaldateandtime_osx")
+            let pathToMainApp = String.pathWithComponents(pathToBundle)
+            NSWorkspace.sharedWorkspace().launchApplication(pathToMainApp)
+        }
+    }
+    
+    func killApp(){
+        NSApplication.sharedApplication().terminate(self)
+    }
+    
+    func killApp(notification:NSNotification) {
+        self.killApp()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        
     }
-
-
 }
 

@@ -157,6 +157,7 @@
 				TargetAttributes = {
 					0CEE7CEA1B6F6B1500754589 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = BEB6JU3NMM;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -336,6 +337,7 @@
 				INFOPLIST_FILE = naturaldateandtime_osx_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -349,6 +351,7 @@
 				INFOPLIST_FILE = naturaldateandtime_osx_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

@@ -1,4 +1,5 @@
 import Cocoa
+import ServiceManagement
 
 class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
@@ -18,8 +19,9 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpQuestionTextView()
-        self.setUpNoteView()
+        self.setUpQuestionTextField()
+        self.setUpNoteTextView()
+        self.setUpLaunchAtLoginMenuItem()
     }
 
     override func viewWillAppear() {
@@ -29,12 +31,45 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.updatePopoverHeight()
     }
     
-    func setUpQuestionTextView() {
+    func setUpQuestionTextField() {
         self.questionTextField.delegate = self
     }
     
-    func setUpNoteView() {
-        self.notesTextView.textContainerInset = NSSize(width: 8,height: 8)
+    func setUpNoteTextView() {
+        self.notesTextView.textContainerInset = NSSize(width: 8, height: 8)
+    }
+    
+    func setUpLaunchAtLoginMenuItem(){
+        
+    }
+    
+    @IBAction func launchAtLoginPressed(sender: AnyObject) {
+        if(self.launchAtLoginMenuItem.state == NSOffState){
+            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(1)) != 0 {
+                self.launchAtLoginMenuItem.state = NSOnState
+            }
+            else{
+                let aboutPopup: NSAlert = NSAlert()
+                aboutPopup.messageText = "An Error Ocurred"
+                aboutPopup.informativeText = "Unable to add application to login item list."
+                aboutPopup.alertStyle = NSAlertStyle.CriticalAlertStyle
+                aboutPopup.addButtonWithTitle("OK")
+                aboutPopup.runModal()
+            }
+        }
+        else {
+            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(0)) != 0 {
+                self.launchAtLoginMenuItem.state = NSOffState
+            }
+            else{
+                let aboutPopup: NSAlert = NSAlert()
+                aboutPopup.messageText = "An Error Ocurred"
+                aboutPopup.informativeText = "Unable to remove application from login item list."
+                aboutPopup.alertStyle = NSAlertStyle.CriticalAlertStyle
+                aboutPopup.addButtonWithTitle("OK")
+                aboutPopup.runModal()
+            }
+        }
     }
     
     @IBAction func aboutMenuItemPressed(sender: AnyObject) {

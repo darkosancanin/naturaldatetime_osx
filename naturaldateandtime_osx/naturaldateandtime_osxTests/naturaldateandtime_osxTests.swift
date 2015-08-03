@@ -1,8 +1,8 @@
 //
 //  naturaldateandtime_osxTests.swift
-//  naturaldateandtime.osxTests
+//  naturaldateandtime_osxTests
 //
-//  Created by Darko Sancanin on 31/07/2015.
+//  Created by Darko Sancanin on 3/08/2015.
 //  Copyright (c) 2015 darkosancanin.com. All rights reserved.
 //
 

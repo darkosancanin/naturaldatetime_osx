@@ -36,6 +36,19 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.notesTextView.textContainerInset = NSSize(width: 8,height: 8)
     }
     
+    @IBAction func aboutMenuItemPressed(sender: AnyObject) {
+        let aboutPopup: NSAlert = NSAlert()
+        aboutPopup.messageText = "Natural Date and Time"
+        aboutPopup.informativeText = "Version 1.0\n2015 Darko Sancanin"
+        aboutPopup.alertStyle = NSAlertStyle.InformationalAlertStyle
+        aboutPopup.addButtonWithTitle("OK")
+        aboutPopup.runModal()
+    }
+    
+    @IBAction func quitMenuItemPressed(sender: AnyObject) {
+        NSApplication.sharedApplication().terminate(sender)
+    }
+    
     @IBAction func clearQuestionButtonPressed(sender: AnyObject) {
         self.hideAll()
         self.showPlaceholderExampleQuestion()

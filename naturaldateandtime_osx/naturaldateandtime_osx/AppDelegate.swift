@@ -14,21 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, PopoverDelegate {
             button.action = Selector("togglePopover:")
         }
         
-        var applicationWasStartedAtLogin = false
-        let runningApplications = NSWorkspace.sharedWorkspace().runningApplications as! [NSRunningApplication]
-        for app : NSRunningApplication in runningApplications {
-            if app.bundleIdentifier == "com.darkosancanin.naturaldateandtime-osx-helper" {
-                applicationWasStartedAtLogin = true
-            }
-        }
-        if (applicationWasStartedAtLogin) {
-            NSDistributedNotificationCenter.defaultCenter().postNotificationName("naturaldateandtime.terminate.helper", object: NSBundle.mainBundle().bundleIdentifier)
-        }
-        
-        let questionViewController = QuestionViewController(nibName: "QuestionView", bundle: nil)
-        questionViewController?.delegate = self
-        questionViewController?.applicationWasLaunchedAtLogin = applicationWasStartedAtLogin
-        popover.contentViewController = questionViewController
+        popover.contentViewController = QuestionViewController(popoverDelegate: self)
         
         eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
             if self.popover.shown {

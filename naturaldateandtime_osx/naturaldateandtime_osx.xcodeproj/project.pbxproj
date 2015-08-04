@@ -58,7 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0CEE7D141B6F6B3800754589 /* naturaldateandtime_osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naturaldateandtime_osx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CEE7D141B6F6B3800754589 /* Natural Date and Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natural Date and Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEE7D181B6F6B3800754589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CEE7D191B6F6B3800754589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CEE7D1B1B6F6B3800754589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		0CEE7D151B6F6B3800754589 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0CEE7D141B6F6B3800754589 /* naturaldateandtime_osx.app */,
+				0CEE7D141B6F6B3800754589 /* Natural Date and Time.app */,
 				0CEE7D241B6F6B3800754589 /* naturaldateandtime_osxTests.xctest */,
 			);
 			name = Products;
@@ -184,7 +184,7 @@
 			);
 			name = naturaldateandtime_osx;
 			productName = naturaldateandtime_osx;
-			productReference = 0CEE7D141B6F6B3800754589 /* naturaldateandtime_osx.app */;
+			productReference = 0CEE7D141B6F6B3800754589 /* Natural Date and Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0CEE7D231B6F6B3800754589 /* naturaldateandtime_osxTests */ = {
@@ -424,7 +424,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = naturaldateandtime_osx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Natural Date and Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -439,7 +439,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = naturaldateandtime_osx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Natural Date and Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -459,7 +459,7 @@
 				);
 				INFOPLIST_FILE = naturaldateandtime_osxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = naturaldateandtime_osxTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/naturaldateandtime_osx.app/Contents/MacOS/naturaldateandtime_osx";
 			};
 			name = Debug;
@@ -475,7 +475,7 @@
 				);
 				INFOPLIST_FILE = naturaldateandtime_osxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = naturaldateandtime_osxTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/naturaldateandtime_osx.app/Contents/MacOS/naturaldateandtime_osx";
 			};
 			name = Release;

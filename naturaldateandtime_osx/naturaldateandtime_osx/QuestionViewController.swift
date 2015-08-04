@@ -3,8 +3,7 @@ import ServiceManagement
 
 class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
-    var delegate:PopoverDelegate?
-    var applicationWasLaunchedAtLogin = false
+    var popoverDelegate : PopoverDelegate?
     @IBOutlet var mainView: NSView!
     @IBOutlet weak var questionTextField: NSTextField!
     @IBOutlet weak var outerQuestionTextField: NSTextField!
@@ -17,6 +16,19 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var outerNotesView: NSScrollView!
     @IBOutlet weak var footerTextField: NSTextField!
     @IBOutlet weak var launchAtLoginMenuItem: NSMenuItem!
+	
+    override init!(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    convenience init(popoverDelegate: PopoverDelegate) {
+        self.init(nibName: "QuestionView", bundle: nil)
+        self.popoverDelegate = popoverDelegate
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not Implemented.")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +53,8 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func setUpLaunchAtLoginMenuItem(){
-        if self.applicationWasLaunchedAtLogin == true {
+        let applicationWasLaunchedAtLogin = NSUserDefaults.standardUserDefaults().boolForKey("launchAtLogin")
+		if applicationWasLaunchedAtLogin == true {
             self.launchAtLoginMenuItem.state = NSOnState
         }
     }
@@ -50,6 +63,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         if(self.launchAtLoginMenuItem.state == NSOffState){
             if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(1)) != 0 {
                 self.launchAtLoginMenuItem.state = NSOnState
+				NSUserDefaults.standardUserDefaults().setBool(true, forKey: "launchAtLogin")
             }
             else{
                 let aboutPopup: NSAlert = NSAlert()
@@ -63,6 +77,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         else {
             if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(0)) != 0 {
                 self.launchAtLoginMenuItem.state = NSOffState
+				NSUserDefaults.standardUserDefaults().setBool(false, forKey: "launchAtLogin")
             }
             else{
                 let aboutPopup: NSAlert = NSAlert()
@@ -127,7 +142,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     override func doCommandBySelector(aSelector: Selector) {
         if aSelector == "cancelOperation:" {
-            self.delegate?.closePopover(self)
+            self.popoverDelegate?.closePopover(self)
         }
     }
     
@@ -144,7 +159,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         if self.outerNotesView.hidden == false {
             height += self.outerNotesView.frame.height + 25
         }
-        self.delegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 180)
+        self.popoverDelegate?.resizeToHeight(height + self.questionTextHeightConstraint.constant  + 180)
     }
     
     func showPlaceholderExampleQuestion() {

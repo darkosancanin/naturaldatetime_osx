@@ -15,33 +15,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        if(mainAppIsAlreadyRunning){
-            self.killApp()
-        }
-        else{
-            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: Selector("killApp:"), name: "naturaldateandtime.terminate.helper", object: "com.darkosancanin.naturaldateandtime-osx")
-            
+        if(!mainAppIsAlreadyRunning){
             var pathToBundle = NSBundle.mainBundle().bundlePath.pathComponents
             pathToBundle.removeLast()
             pathToBundle.removeLast()
             pathToBundle.removeLast()
             pathToBundle.append("MacOS")
-            pathToBundle.append("naturaldateandtime_osx")
+            pathToBundle.append("Natural Date and Time")
             let pathToMainApp = String.pathWithComponents(pathToBundle)
             NSWorkspace.sharedWorkspace().launchApplication(pathToMainApp)
         }
+		self.killApp()
     }
     
     func killApp(){
         NSApplication.sharedApplication().terminate(self)
-    }
-    
-    func killApp(notification:NSNotification) {
-        self.killApp()
-    }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        
     }
 }
 

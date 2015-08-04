@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CEE7CEB1B6F6B1500754589 /* naturaldateandtime_osx_helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naturaldateandtime_osx_helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CEE7CEB1B6F6B1500754589 /* Natural Date and Time Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natural Date and Time Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEE7CEF1B6F6B1500754589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CEE7CF01B6F6B1500754589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CEE7CF21B6F6B1500754589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		0CEE7CEC1B6F6B1500754589 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0CEE7CEB1B6F6B1500754589 /* naturaldateandtime_osx_helper.app */,
+				0CEE7CEB1B6F6B1500754589 /* Natural Date and Time Helper.app */,
 				0CEE7CFB1B6F6B1600754589 /* naturaldateandtime_osx_helperTests.xctest */,
 			);
 			name = Products;
@@ -125,7 +125,7 @@
 			);
 			name = naturaldateandtime_osx_helper;
 			productName = naturaldateandtime_osx_helper;
-			productReference = 0CEE7CEB1B6F6B1500754589 /* naturaldateandtime_osx_helper.app */;
+			productReference = 0CEE7CEB1B6F6B1500754589 /* Natural Date and Time Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0CEE7CFA1B6F6B1600754589 /* naturaldateandtime_osx_helperTests */ = {
@@ -336,7 +336,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = naturaldateandtime_osx_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Natural Date and Time Helper";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -350,7 +350,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = naturaldateandtime_osx_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Natural Date and Time Helper";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

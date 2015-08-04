@@ -10,7 +10,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var mainAppIsAlreadyRunning = false
         let runningApplications = NSWorkspace.sharedWorkspace().runningApplications as! [NSRunningApplication]
         for app : NSRunningApplication in runningApplications {
-            if app.bundleIdentifier == "com.darkosancanin.naturaldateandtime-osx" {
+            if app.bundleIdentifier == "com.darkosancanin.naturaldateandtime.osx" {
                 mainAppIsAlreadyRunning = true
             }
         }

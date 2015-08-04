@@ -61,7 +61,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func launchAtLoginPressed(sender: AnyObject) {
         if(self.launchAtLoginMenuItem.state == NSOffState){
-            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(1)) != 0 {
+            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime.osx.helper", Boolean(1)) != 0 {
                 self.launchAtLoginMenuItem.state = NSOnState
 				NSUserDefaults.standardUserDefaults().setBool(true, forKey: "launchAtLogin")
             }
@@ -75,7 +75,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
             }
         }
         else {
-            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime-osx-helper", Boolean(0)) != 0 {
+            if SMLoginItemSetEnabled("com.darkosancanin.naturaldateandtime.osx.helper", Boolean(0)) != 0 {
                 self.launchAtLoginMenuItem.state = NSOffState
 				NSUserDefaults.standardUserDefaults().setBool(false, forKey: "launchAtLogin")
             }

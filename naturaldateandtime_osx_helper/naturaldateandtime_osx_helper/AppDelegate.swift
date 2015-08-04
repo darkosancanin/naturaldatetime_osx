@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let pathToMainApp = String.pathWithComponents(pathToBundle)
             NSWorkspace.sharedWorkspace().launchApplication(pathToMainApp)
         }
+        
 		self.killApp()
     }
     

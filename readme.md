@@ -11,3 +11,5 @@ See https://github.com/darkosancanin/naturaldatetime_web and http://www.naturald
 ![Mac OS X](https://raw.githubusercontent.com/darkosancanin/naturaldatetime_osx/master/other/screenshots/screenshot_2.png)
 
 ![Mac OS X](https://raw.githubusercontent.com/darkosancanin/naturaldatetime_osx/master/other/screenshots/screenshot_3.png)
+
+![Mac OS X](https://raw.githubusercontent.com/darkosancanin/naturaldatetime_osx/master/other/screenshots/screenshot_4.png)

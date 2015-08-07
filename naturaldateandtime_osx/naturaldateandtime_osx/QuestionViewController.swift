@@ -212,7 +212,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
                 if understoodQuestion {
                     self.showAnswer(answerText, note:note)
                 } else {
-                    self.showAnswer("Im sorry I could not understand your question. Please try and rephrase your question or tap on the examples link above to see what questions I do understand.", note: nil)
+                    self.showAnswer("Im sorry I could not understand your question. Please try and rephrase your question.", note: nil)
                 }
             }
             else {

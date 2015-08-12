@@ -53,16 +53,6 @@
                         <action selector="questionTextFieldEnterPressed:" target="-2" id="yWS-eb-s5z"/>
                     </connections>
                 </textField>
-                <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
-                    <rect key="frame" x="554" y="282" width="11" height="11"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressTemplate" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="bIs-rF-8nk">
-                        <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="clearQuestionButtonPressed:" target="-2" id="al6-KB-sZn"/>
-                    </connections>
-                </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-AS-MG0">
                     <rect key="frame" x="150" y="329" width="300" height="56"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="TitleDarkMode" id="cvK-HX-3PR"/>
@@ -158,6 +148,16 @@
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
+                <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="l5P-Vo-LTP" userLabel="Clear Question Button">
+                    <rect key="frame" x="550" y="280" width="15" height="15"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="CloseIcon" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="bIs-rF-8nk">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clearQuestionButtonPressed:" target="-2" id="al6-KB-sZn"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="mQc-0d-IfB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="4Jy-RQ-8sY"/>
@@ -187,8 +187,8 @@
         </customView>
     </objects>
     <resources>
+        <image name="CloseIcon" width="11.25" height="11.25"/>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSStopProgressTemplate" width="11" height="11"/>
         <image name="TitleDarkMode" width="300" height="55.5"/>
     </resources>
 </document>

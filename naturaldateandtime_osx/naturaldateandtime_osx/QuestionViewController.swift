@@ -16,6 +16,9 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var outerNotesView: NSScrollView!
     @IBOutlet weak var footerTextField: NSTextField!
     @IBOutlet weak var launchAtLoginMenuItem: NSMenuItem!
+    @IBOutlet weak var titleImage: NSImageView!
+    var questionTextColor = NSColor.blackColor()
+    var standardTextColor : NSColor? = NSColor.whiteColor()
 	
     override init!(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,6 +38,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.setUpQuestionTextField()
         self.setUpNoteTextView()
         self.setUpLaunchAtLoginMenuItem()
+        self.standardTextColor = self.answerTextField.textColor
     }
 
     override func viewWillAppear() {
@@ -42,6 +46,25 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
         self.hideAll()
         self.showPlaceholderExampleQuestion()
         self.updatePopoverHeight()
+        self.changeMenuBarModeSpecificElements()
+    }
+    
+    func changeMenuBarModeSpecificElements(){
+        let appearance = NSUserDefaults.standardUserDefaults().stringForKey("AppleInterfaceStyle") ?? "Light"
+        if appearance == "Light" {
+            self.questionTextColor = NSColor.blackColor()
+            self.questionTextField.textColor = questionTextColor
+            self.answerTextField.textColor = standardTextColor
+            self.titleImage.image = NSImage(named: "Title")
+            self.footerTextField.textColor = standardTextColor
+        }
+        else {
+            self.questionTextColor = NSColor.whiteColor()
+            self.questionTextField.textColor = questionTextColor
+            self.answerTextField.textColor = NSColor.whiteColor()
+            self.titleImage.image = NSImage(named: "TitleDarkMode")
+            self.footerTextField.textColor = NSColor.whiteColor()
+        }
     }
     
     func setUpQuestionTextField() {
@@ -110,7 +133,7 @@ class QuestionViewController: NSViewController, NSTextFieldDelegate {
     
     override func controlTextDidChange(obj: NSNotification) {
         self.hideAll()
-        self.questionTextField.textColor = NSColor.blackColor()
+        self.questionTextField.textColor = self.questionTextColor
         self.resizeQuestionTextField()
     }
  

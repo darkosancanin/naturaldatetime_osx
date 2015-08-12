@@ -11,6 +11,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, PopoverDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarIcon")
+            button.image?.setTemplate(true)
             button.action = Selector("togglePopover:")
         }
         

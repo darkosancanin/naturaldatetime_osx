@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "clear_question.png"
+      "filename" : "title_dark_mode@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "clear_question@2x.png"
+      "filename" : "title_dark_mode@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "clear_question@3x.png"
+      "filename" : "title_dark_mode@3x.png"
     }
   ],
   "info" : {

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8CD28E1B7B528800A698B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CD28D1B7B528800A698B8 /* Images.xcassets */; };
 		0CED686C1B70BFCB00FFCAD9 /* Natural Date and Time Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0CEE7D4C1B6F735500754589 /* Natural Date and Time Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0CEE7D1A1B6F6B3800754589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7D191B6F6B3800754589 /* AppDelegate.swift */; };
-		0CEE7D1C1B6F6B3800754589 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEE7D1B1B6F6B3800754589 /* Images.xcassets */; };
 		0CEE7D1F1B6F6B3800754589 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CEE7D1D1B6F6B3800754589 /* MainMenu.xib */; };
 		0CEE7D2B1B6F6B3800754589 /* naturaldateandtime_osxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7D2A1B6F6B3800754589 /* naturaldateandtime_osxTests.swift */; };
 		0CEE7D541B6F73F600754589 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7D4F1B6F73F600754589 /* QuestionViewController.swift */; };
@@ -58,10 +58,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C8CD28D1B7B528800A698B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CEE7D141B6F6B3800754589 /* Natural Date and Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natural Date and Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEE7D181B6F6B3800754589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CEE7D191B6F6B3800754589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CEE7D1B1B6F6B3800754589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CEE7D1E1B6F6B3800754589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0CEE7D241B6F6B3800754589 /* naturaldateandtime_osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = naturaldateandtime_osxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEE7D291B6F6B3800754589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 		0CEE7D161B6F6B3800754589 /* naturaldateandtime_osx */ = {
 			isa = PBXGroup;
 			children = (
+				0C8CD28D1B7B528800A698B8 /* Images.xcassets */,
 				0CEE7D5F1B6F854F00754589 /* naturaldateandtime_osx.entitlements */,
 				0CEE7D191B6F6B3800754589 /* AppDelegate.swift */,
 				0CEE7D4F1B6F73F600754589 /* QuestionViewController.swift */,
@@ -126,7 +127,6 @@
 				0CEE7D531B6F73F600754589 /* EventMonitor.swift */,
 				0CEE7D511B6F73F600754589 /* PopoverDelegate.swift */,
 				0CEE7D1D1B6F6B3800754589 /* MainMenu.xib */,
-				0CEE7D1B1B6F6B3800754589 /* Images.xcassets */,
 				0CEE7D171B6F6B3800754589 /* Supporting Files */,
 			);
 			path = naturaldateandtime_osx;
@@ -276,7 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CEE7D1C1B6F6B3800754589 /* Images.xcassets in Resources */,
+				0C8CD28E1B7B528800A698B8 /* Images.xcassets in Resources */,
 				0CEE7D1F1B6F6B3800754589 /* MainMenu.xib in Resources */,
 				0CEE7D551B6F73F600754589 /* QuestionView.xib in Resources */,
 			);
